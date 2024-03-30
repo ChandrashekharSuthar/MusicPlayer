@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="?attr/themeColor"
+    android:background="@drawable/mini_player_background"
+    android:padding="5dp"
     tools:context=".NowPlaying">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/songImgNP"
-        android:layout_width="70dp"
-        android:layout_height="55dp"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginVertical="5dp"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="5dp"
         android:src="@drawable/music_player_icon_slash_screen"
         app:shapeAppearanceOverlay="@style/curved" />
 
@@ -22,7 +22,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
-        android:layout_marginEnd="10dp"
         android:backgroundTint="?attr/themeColor"
         app:icon="@drawable/next_icon"
         app:iconSize="40dp"
