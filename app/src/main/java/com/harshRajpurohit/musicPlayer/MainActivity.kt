@@ -76,6 +76,9 @@ class MainActivity : AppCompatActivity() {
         toggle = ActionBarDrawerToggle(this, binding.root, R.string.open, R.string.close)
         binding.root.addDrawerListener(toggle)
         toggle.syncState()
+
+        toggle.drawerArrowDrawable.color = resources.getColor(R.color.white)
+
         //checking for dark theme
         if (themeIndex == 4 && resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK == Configuration.UI_MODE_NIGHT_NO)
             Toast.makeText(this, "Black Theme Works Best in Dark Mode!!", Toast.LENGTH_LONG).show()

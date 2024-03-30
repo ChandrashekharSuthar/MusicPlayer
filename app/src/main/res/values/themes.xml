@@ -10,6 +10,7 @@
     <!--    Background as well as text color for alert dialog buttons-->
     <attr name="dialogTextColor" format="color" />
     <attr name="dialogBtnBackground" format="color" />
+    <attr name="colorOnThemeColor" format="color" />
 
     //Theme for Activities
 
@@ -25,6 +26,7 @@
         <item name="dialogBtnBackground">?attr/themeColor</item>
         <item name="dialogTextColor">@color/white</item>
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <item name="colorOnThemeColor">@color/white</item>
     </style>
 
     <style name="coolBlue" parent="Theme.Material3.Light.NoActionBar">
@@ -39,6 +41,7 @@
         <item name="dialogBtnBackground">?attr/themeColor</item>
         <item name="dialogTextColor">@color/white</item>
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <item name="colorOnThemeColor">@color/white</item>
     </style>
 
     <style name="coolPurple" parent="Theme.Material3.Light.NoActionBar">
@@ -53,6 +56,7 @@
         <item name="dialogBtnBackground">?attr/themeColor</item>
         <item name="dialogTextColor">@color/white</item>
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <item name="colorOnThemeColor">@color/white</item>
     </style>
 
     <style name="coolGreen" parent="Theme.Material3.Light.NoActionBar">
@@ -67,6 +71,7 @@
         <item name="dialogBtnBackground">?attr/themeColor</item>
         <item name="dialogTextColor">@color/white</item>
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <item name="colorOnThemeColor">@color/white</item>
     </style>
 
     //Theme for Navigation Drawer
@@ -83,6 +88,7 @@
         <item name="dialogBtnBackground">?attr/themeColor</item>
         <item name="dialogTextColor">@color/white</item>
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <item name="colorOnThemeColor">@color/white</item>
     </style>
 
     <style name="coolBlueNav" parent="Theme.Material3.Light.NoActionBar">
@@ -97,6 +103,7 @@
         <item name="dialogBtnBackground">?attr/themeColor</item>
         <item name="dialogTextColor">@color/white</item>
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <item name="colorOnThemeColor">@color/white</item>
     </style>
 
     <style name="coolPurpleNav" parent="Theme.Material3.Light.NoActionBar">
@@ -111,6 +118,7 @@
         <item name="dialogBtnBackground">?attr/themeColor</item>
         <item name="dialogTextColor">@color/white</item>
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <item name="colorOnThemeColor">@color/white</item>
     </style>
 
     <style name="coolGreenNav" parent="Theme.Material3.Light.NoActionBar">
@@ -125,6 +133,7 @@
         <item name="dialogBtnBackground">?attr/themeColor</item>
         <item name="dialogTextColor">@color/white</item>
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <item name="colorOnThemeColor">@color/white</item>
     </style>
     //new dark Theme
 
@@ -139,6 +148,7 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/themeColor</item>
         <item name="dialogBtnBackground">@color/white</item>
         <item name="dialogTextColor">@color/black</item>
+        <item name="colorOnThemeColor">@color/white</item>
     </style>
 
     <style name="coolBlackNav" parent="Theme.Material3.DayNight.NoActionBar">
@@ -152,5 +162,6 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/themeColor</item>
         <item name="dialogBtnBackground">@color/white</item>
         <item name="dialogTextColor">@color/black</item>
+        <item name="colorOnThemeColor">@color/white</item>
     </style>
 </resources>

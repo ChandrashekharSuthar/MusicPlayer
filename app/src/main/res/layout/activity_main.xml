@@ -16,6 +16,9 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="?attr/themeColor"
+            app:navigationIconTint="?attr/colorOnThemeColor"
+            app:titleTextColor="?attr/colorOnThemeColor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -26,6 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:background="?attr/themeColor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/toolbar">
@@ -40,10 +44,10 @@
                 android:maxLines="1"
                 android:text="@string/shuffle_btn"
                 android:textAllCaps="false"
-                android:textColor="?colorOnPrimary"
+                android:textColor="?attr/colorOnThemeColor"
                 app:icon="@drawable/shuffle_icon"
                 app:iconGravity="top"
-                app:iconTint="?attr/themeColor" />
+                app:iconTint="?attr/colorOnThemeColor" />
             <!--Favourites Button-->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/favouriteBtn"
@@ -55,10 +59,10 @@
                 android:maxLines="1"
                 android:text="@string/favourites_btn"
                 android:textAllCaps="false"
-                android:textColor="?colorOnPrimary"
+                android:textColor="?attr/colorOnThemeColor"
                 app:icon="@drawable/favourite_icon"
                 app:iconGravity="top"
-                app:iconTint="?attr/themeColor" />
+                app:iconTint="?attr/colorOnThemeColor" />
             <!--Playlists Button-->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/playlistBtn"
@@ -70,10 +74,10 @@
                 android:maxLines="1"
                 android:text="@string/playlist_btn"
                 android:textAllCaps="false"
-                android:textColor="?colorOnPrimary"
+                android:textColor="?attr/colorOnThemeColor"
                 app:icon="@drawable/playlist_icon"
                 app:iconGravity="top"
-                app:iconTint="?attr/themeColor" />
+                app:iconTint="?attr/colorOnThemeColor" />
 
             <!--Play Next Button-->
             <com.google.android.material.button.MaterialButton
@@ -86,10 +90,10 @@
                 android:maxLines="1"
                 android:text="@string/play_next"
                 android:textAllCaps="false"
-                android:textColor="?colorOnPrimary"
+                android:textColor="?attr/colorOnThemeColor"
                 app:icon="@drawable/play_next_icon"
                 app:iconGravity="top"
-                app:iconTint="?attr/themeColor" />
+                app:iconTint="?attr/colorOnThemeColor" />
 
         </LinearLayout>
 
@@ -98,8 +102,9 @@
             android:id="@+id/totalSongs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
             android:text="@string/total_songs"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="5dp"
             android:textColor="?colorOnPrimary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -119,6 +124,8 @@
                 android:id="@+id/musicRV"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:paddingBottom="80dp"
+                android:clipToPadding="false"
                 android:scrollbarThumbVertical="@drawable/scroll_bar_icon"
                 android:scrollbars="vertical" />
 
