@@ -71,7 +71,7 @@
 
     //Theme for Navigation Drawer
 
-    <style name="coolPinkNav" parent="Theme.Material3.Light">
+    <style name="coolPinkNav" parent="Theme.Material3.Light.NoActionBar">
         <item name="themeColor">@color/cool_pink</item>
         <item name="colorPrimary">@color/white</item>
         <item name="colorPrimaryVariant">@color/black</item>
@@ -85,7 +85,7 @@
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
     </style>
 
-    <style name="coolBlueNav" parent="Theme.Material3.Light">
+    <style name="coolBlueNav" parent="Theme.Material3.Light.NoActionBar">
         <item name="themeColor">@color/cool_blue</item>
         <item name="colorPrimary">@color/white</item>
         <item name="colorPrimaryVariant">@color/black</item>
@@ -99,7 +99,7 @@
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
     </style>
 
-    <style name="coolPurpleNav" parent="Theme.Material3.Light">
+    <style name="coolPurpleNav" parent="Theme.Material3.Light.NoActionBar">
         <item name="themeColor">@color/purple_500</item>
         <item name="colorPrimary">@color/white</item>
         <item name="colorPrimaryVariant">@color/black</item>
@@ -113,7 +113,7 @@
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
     </style>
 
-    <style name="coolGreenNav" parent="Theme.Material3.Light">
+    <style name="coolGreenNav" parent="Theme.Material3.Light.NoActionBar">
         <item name="themeColor">@color/cool_green</item>
         <item name="colorPrimary">@color/white</item>
         <item name="colorPrimaryVariant">@color/black</item>
@@ -141,7 +141,7 @@
         <item name="dialogTextColor">@color/black</item>
     </style>
 
-    <style name="coolBlackNav" parent="Theme.Material3.DayNight">
+    <style name="coolBlackNav" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="themeColor">@color/black</item>
         <item name="colorPrimary">@color/white</item>
         <item name="colorPrimaryVariant">@color/black</item>
