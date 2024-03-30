@@ -8,7 +8,7 @@ import com.harshRajpurohit.musicPlayer.databinding.ActivityPlayNextBinding
 
 class PlayNext : AppCompatActivity() {
 
-    companion object{
+    companion object {
         var playNextList: ArrayList<Music> = ArrayList()
     }
 
@@ -23,7 +23,7 @@ class PlayNext : AppCompatActivity() {
         binding.playNextRV.layoutManager = GridLayoutManager(this, 4)
         binding.playNextRV.adapter = FavouriteAdapter(this, playNextList, playNext = true)
 
-        if(playNextList.isNotEmpty())
+        if (playNextList.isNotEmpty())
             binding.instructionPN.visibility = View.GONE
 
         binding.backBtnPN.setOnClickListener {

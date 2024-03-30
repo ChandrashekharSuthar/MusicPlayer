@@ -16,7 +16,8 @@ class AboutActivity : AppCompatActivity() {
         supportActionBar?.title = "About"
         binding.aboutText.text = aboutText()
     }
-    private fun aboutText(): String{
+
+    private fun aboutText(): String {
         return "Developed By: Harsh H. Rajpurohit" +
                 "\n\nIf you want to provide feedback, I will love to hear that."
     }

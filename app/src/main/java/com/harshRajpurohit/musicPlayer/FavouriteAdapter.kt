@@ -16,7 +16,11 @@ import com.google.android.material.snackbar.Snackbar
 import com.harshRajpurohit.musicPlayer.databinding.FavouriteViewBinding
 import com.harshRajpurohit.musicPlayer.databinding.MoreFeaturesBinding
 
-class FavouriteAdapter(private val context: Context, private var musicList: ArrayList<Music>,val playNext: Boolean = false) : RecyclerView.Adapter<FavouriteAdapter.MyHolder>() {
+class FavouriteAdapter(
+    private val context: Context,
+    private var musicList: ArrayList<Music>,
+    val playNext: Boolean = false
+) : RecyclerView.Adapter<FavouriteAdapter.MyHolder>() {
 
     class MyHolder(binding: FavouriteViewBinding) : RecyclerView.ViewHolder(binding.root) {
         val image = binding.songImgFV
@@ -33,11 +37,13 @@ class FavouriteAdapter(private val context: Context, private var musicList: Arra
         holder.name.text = musicList[position].title
         Glide.with(context)
             .load(musicList[position].artUri)
-            .apply(RequestOptions().placeholder(R.drawable.music_player_icon_slash_screen).centerCrop())
+            .apply(
+                RequestOptions().placeholder(R.drawable.music_player_icon_slash_screen).centerCrop()
+            )
             .into(holder.image)
 
         //when play next music is clicked
-        if(playNext){
+        if (playNext) {
             holder.root.setOnClickListener {
                 val intent = Intent(context, PlayerActivity::class.java)
                 intent.putExtra("index", position)
@@ -45,7 +51,8 @@ class FavouriteAdapter(private val context: Context, private var musicList: Arra
                 ContextCompat.startActivity(context, intent, null)
             }
             holder.root.setOnLongClickListener {
-                val customDialog = LayoutInflater.from(context).inflate(R.layout.more_features, holder.root, false)
+                val customDialog =
+                    LayoutInflater.from(context).inflate(R.layout.more_features, holder.root, false)
                 val bindingMF = MoreFeaturesBinding.bind(customDialog)
                 val dialog = MaterialAlertDialogBuilder(context).setView(customDialog)
                     .create()
@@ -53,11 +60,13 @@ class FavouriteAdapter(private val context: Context, private var musicList: Arra
                 dialog.window?.setBackgroundDrawable(ColorDrawable(0x99000000.toInt()))
                 bindingMF.AddToPNBtn.text = "Remove"
                 bindingMF.AddToPNBtn.setOnClickListener {
-                    if(position == PlayerActivity.songPosition)
-                        Snackbar.make((context as Activity).findViewById(R.id.linearLayoutPN),
-                            "Can't Remove Currently Playing Song.", Snackbar.LENGTH_SHORT).show()
-                    else{
-                        if(PlayerActivity.songPosition < position && PlayerActivity.songPosition != 0) --PlayerActivity.songPosition
+                    if (position == PlayerActivity.songPosition)
+                        Snackbar.make(
+                            (context as Activity).findViewById(R.id.linearLayoutPN),
+                            "Can't Remove Currently Playing Song.", Snackbar.LENGTH_SHORT
+                        ).show()
+                    else {
+                        if (PlayerActivity.songPosition < position && PlayerActivity.songPosition != 0) --PlayerActivity.songPosition
                         PlayNext.playNextList.removeAt(position)
                         PlayerActivity.musicListPA.removeAt(position)
                         notifyItemRemoved(position)
@@ -66,7 +75,7 @@ class FavouriteAdapter(private val context: Context, private var musicList: Arra
                 }
                 return@setOnLongClickListener true
             }
-        }else{
+        } else {
             holder.root.setOnClickListener {
                 val intent = Intent(context, PlayerActivity::class.java)
                 intent.putExtra("index", position)
@@ -81,7 +90,7 @@ class FavouriteAdapter(private val context: Context, private var musicList: Arra
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun updateFavourites(newList: ArrayList<Music>){
+    fun updateFavourites(newList: ArrayList<Music>) {
         musicList = ArrayList()
         musicList.addAll(newList)
         notifyDataSetChanged()

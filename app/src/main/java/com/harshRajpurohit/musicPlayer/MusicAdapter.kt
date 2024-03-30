@@ -21,9 +21,12 @@ import com.harshRajpurohit.musicPlayer.databinding.DetailsViewBinding
 import com.harshRajpurohit.musicPlayer.databinding.MoreFeaturesBinding
 import com.harshRajpurohit.musicPlayer.databinding.MusicViewBinding
 
-class MusicAdapter(private val context: Context, private var musicList: ArrayList<Music>, private val playlistDetails: Boolean = false,
-private val selectionActivity: Boolean = false)
-    : RecyclerView.Adapter<MyHolder>() {
+class MusicAdapter(
+    private val context: Context,
+    private var musicList: ArrayList<Music>,
+    private val playlistDetails: Boolean = false,
+    private val selectionActivity: Boolean = false
+) : RecyclerView.Adapter<MyHolder>() {
 
     class MyHolder(binding: MusicViewBinding) : RecyclerView.ViewHolder(binding.root) {
         val title = binding.songNameMV
@@ -43,13 +46,16 @@ private val selectionActivity: Boolean = false)
         holder.duration.text = formatDuration(musicList[position].duration)
         Glide.with(context)
             .load(musicList[position].artUri)
-            .apply(RequestOptions().placeholder(R.drawable.music_player_icon_slash_screen).centerCrop())
+            .apply(
+                RequestOptions().placeholder(R.drawable.music_player_icon_slash_screen).centerCrop()
+            )
             .into(holder.image)
 
         //for play next feature
-        if(!selectionActivity)
+        if (!selectionActivity)
             holder.root.setOnLongClickListener {
-                val customDialog = LayoutInflater.from(context).inflate(R.layout.more_features, holder.root, false)
+                val customDialog =
+                    LayoutInflater.from(context).inflate(R.layout.more_features, holder.root, false)
                 val bindingMF = MoreFeaturesBinding.bind(customDialog)
                 val dialog = MaterialAlertDialogBuilder(context).setView(customDialog)
                     .create()
@@ -58,7 +64,7 @@ private val selectionActivity: Boolean = false)
 
                 bindingMF.AddToPNBtn.setOnClickListener {
                     try {
-                        if(PlayNext.playNextList.isEmpty()){
+                        if (PlayNext.playNextList.isEmpty()) {
                             PlayNext.playNextList.add(PlayerActivity.musicListPA[PlayerActivity.songPosition])
                             PlayerActivity.songPosition = 0
                         }
@@ -66,22 +72,23 @@ private val selectionActivity: Boolean = false)
                         PlayNext.playNextList.add(musicList[position])
                         PlayerActivity.musicListPA = ArrayList()
                         PlayerActivity.musicListPA.addAll(PlayNext.playNextList)
-                    }catch (e: Exception){
-                        Snackbar.make(context, holder.root,"Play A Song First!!", 3000).show()
+                    } catch (e: Exception) {
+                        Snackbar.make(context, holder.root, "Play A Song First!!", 3000).show()
                     }
                     dialog.dismiss()
                 }
 
                 bindingMF.infoBtn.setOnClickListener {
                     dialog.dismiss()
-                    val detailsDialog = LayoutInflater.from(context).inflate(R.layout.details_view, bindingMF.root, false)
+                    val detailsDialog = LayoutInflater.from(context)
+                        .inflate(R.layout.details_view, bindingMF.root, false)
                     val binder = DetailsViewBinding.bind(detailsDialog)
                     binder.detailsTV.setTextColor(Color.WHITE)
                     binder.root.setBackgroundColor(Color.TRANSPARENT)
                     val dDialog = MaterialAlertDialogBuilder(context)
 //                        .setBackground(ColorDrawable(0x99000000.toInt()))
                         .setView(detailsDialog)
-                        .setPositiveButton("OK"){self, _ -> self.dismiss()}
+                        .setPositiveButton("OK") { self, _ -> self.dismiss() }
                         .setCancelable(false)
                         .create()
                     dDialog.show()
@@ -90,7 +97,8 @@ private val selectionActivity: Boolean = false)
                     dDialog.window?.setBackgroundDrawable(ColorDrawable(0x99000000.toInt()))
                     val str = SpannableStringBuilder().bold { append("DETAILS\n\nName: ") }
                         .append(musicList[position].title)
-                        .bold { append("\n\nDuration: ") }.append(DateUtils.formatElapsedTime(musicList[position].duration/1000))
+                        .bold { append("\n\nDuration: ") }
+                        .append(DateUtils.formatElapsedTime(musicList[position].duration / 1000))
                         .bold { append("\n\nLocation: ") }.append(musicList[position].path)
                     binder.detailsTV.text = str
                 }
@@ -98,59 +106,83 @@ private val selectionActivity: Boolean = false)
                 return@setOnLongClickListener true
             }
 
-        when{
-            playlistDetails ->{
+        when {
+            playlistDetails -> {
                 holder.root.setOnClickListener {
                     sendIntent(ref = "PlaylistDetailsAdapter", pos = position)
                 }
             }
-            selectionActivity ->{
+
+            selectionActivity -> {
                 holder.root.setOnClickListener {
-                    if(addSong(musicList[position]))
-                        holder.root.setBackgroundColor(ContextCompat.getColor(context, R.color.cool_pink))
+                    if (addSong(musicList[position]))
+                        holder.root.setBackgroundColor(
+                            ContextCompat.getColor(
+                                context,
+                                R.color.cool_pink
+                            )
+                        )
                     else
-                        holder.root.setBackgroundColor(ContextCompat.getColor(context, R.color.white))
+                        holder.root.setBackgroundColor(
+                            ContextCompat.getColor(
+                                context,
+                                R.color.white
+                            )
+                        )
 
                 }
             }
-            else ->{
-                holder.root.setOnClickListener {
-                when{
-                    MainActivity.search -> sendIntent(ref = "MusicAdapterSearch", pos = position)
-                    musicList[position].id == PlayerActivity.nowPlayingId ->
-                        sendIntent(ref = "NowPlaying", pos = PlayerActivity.songPosition)
-                    else->sendIntent(ref="MusicAdapter", pos = position) } }
-        }
 
-         }
+            else -> {
+                holder.root.setOnClickListener {
+                    when {
+                        MainActivity.search -> sendIntent(
+                            ref = "MusicAdapterSearch",
+                            pos = position
+                        )
+
+                        musicList[position].id == PlayerActivity.nowPlayingId ->
+                            sendIntent(ref = "NowPlaying", pos = PlayerActivity.songPosition)
+
+                        else -> sendIntent(ref = "MusicAdapter", pos = position)
+                    }
+                }
+            }
+
+        }
     }
 
     override fun getItemCount(): Int {
         return musicList.size
     }
 
-    fun updateMusicList(searchList : ArrayList<Music>){
+    fun updateMusicList(searchList: ArrayList<Music>) {
         musicList = ArrayList()
         musicList.addAll(searchList)
         notifyDataSetChanged()
     }
-    private fun sendIntent(ref: String, pos: Int){
+
+    private fun sendIntent(ref: String, pos: Int) {
         val intent = Intent(context, PlayerActivity::class.java)
         intent.putExtra("index", pos)
         intent.putExtra("class", ref)
         ContextCompat.startActivity(context, intent, null)
     }
-    private fun addSong(song: Music): Boolean{
+
+    private fun addSong(song: Music): Boolean {
         PlaylistActivity.musicPlaylist.ref[PlaylistDetails.currentPlaylistPos].playlist.forEachIndexed { index, music ->
-            if(song.id == music.id){
-                PlaylistActivity.musicPlaylist.ref[PlaylistDetails.currentPlaylistPos].playlist.removeAt(index)
+            if (song.id == music.id) {
+                PlaylistActivity.musicPlaylist.ref[PlaylistDetails.currentPlaylistPos].playlist.removeAt(
+                    index
+                )
                 return false
             }
         }
         PlaylistActivity.musicPlaylist.ref[PlaylistDetails.currentPlaylistPos].playlist.add(song)
         return true
     }
-    fun refreshPlaylist(){
+
+    fun refreshPlaylist() {
         musicList = ArrayList()
         musicList = PlaylistActivity.musicPlaylist.ref[PlaylistDetails.currentPlaylistPos].playlist
         notifyDataSetChanged()

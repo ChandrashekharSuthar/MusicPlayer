@@ -11,7 +11,10 @@ import com.bumptech.glide.request.RequestOptions
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.harshRajpurohit.musicPlayer.databinding.PlaylistViewBinding
 
-class PlaylistViewAdapter(private val context: Context, private var playlistList: ArrayList<Playlist>) : RecyclerView.Adapter<PlaylistViewAdapter.MyHolder>() {
+class PlaylistViewAdapter(
+    private val context: Context,
+    private var playlistList: ArrayList<Playlist>
+) : RecyclerView.Adapter<PlaylistViewAdapter.MyHolder>() {
 
     class MyHolder(binding: PlaylistViewBinding) : RecyclerView.ViewHolder(binding.root) {
         val image = binding.playlistImg
@@ -25,7 +28,7 @@ class PlaylistViewAdapter(private val context: Context, private var playlistList
     }
 
     override fun onBindViewHolder(holder: MyHolder, position: Int) {
-        if(MainActivity.themeIndex == 4){
+        if (MainActivity.themeIndex == 4) {
             holder.root.strokeColor = ContextCompat.getColor(context, R.color.white)
         }
         holder.name.text = playlistList[position].name
@@ -34,12 +37,12 @@ class PlaylistViewAdapter(private val context: Context, private var playlistList
             val builder = MaterialAlertDialogBuilder(context)
             builder.setTitle(playlistList[position].name)
                 .setMessage("Do you want to delete playlist?")
-                .setPositiveButton("Yes"){ dialog, _ ->
+                .setPositiveButton("Yes") { dialog, _ ->
                     PlaylistActivity.musicPlaylist.ref.removeAt(position)
                     refreshPlaylist()
                     dialog.dismiss()
                 }
-                .setNegativeButton("No"){dialog, _ ->
+                .setNegativeButton("No") { dialog, _ ->
                     dialog.dismiss()
                 }
             val customDialog = builder.create()
@@ -52,10 +55,13 @@ class PlaylistViewAdapter(private val context: Context, private var playlistList
             intent.putExtra("index", position)
             ContextCompat.startActivity(context, intent, null)
         }
-        if(PlaylistActivity.musicPlaylist.ref[position].playlist.size > 0){
+        if (PlaylistActivity.musicPlaylist.ref[position].playlist.size > 0) {
             Glide.with(context)
                 .load(PlaylistActivity.musicPlaylist.ref[position].playlist[0].artUri)
-                .apply(RequestOptions().placeholder(R.drawable.music_player_icon_slash_screen).centerCrop())
+                .apply(
+                    RequestOptions().placeholder(R.drawable.music_player_icon_slash_screen)
+                        .centerCrop()
+                )
                 .into(holder.image)
         }
     }
@@ -63,7 +69,8 @@ class PlaylistViewAdapter(private val context: Context, private var playlistList
     override fun getItemCount(): Int {
         return playlistList.size
     }
-    fun refreshPlaylist(){
+
+    fun refreshPlaylist() {
         playlistList = ArrayList()
         playlistList.addAll(PlaylistActivity.musicPlaylist.ref)
         notifyDataSetChanged()

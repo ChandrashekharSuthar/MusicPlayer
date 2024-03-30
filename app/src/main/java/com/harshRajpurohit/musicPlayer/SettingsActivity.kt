@@ -16,7 +16,7 @@ class SettingsActivity : AppCompatActivity() {
         binding = ActivitySettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.title = "Settings"
-        when(MainActivity.themeIndex){
+        when (MainActivity.themeIndex) {
             0 -> binding.coolPinkTheme.setBackgroundColor(Color.YELLOW)
             1 -> binding.coolBlueTheme.setBackgroundColor(Color.YELLOW)
             2 -> binding.coolPurpleTheme.setBackgroundColor(Color.YELLOW)
@@ -34,12 +34,12 @@ class SettingsActivity : AppCompatActivity() {
             var currentSort = MainActivity.sortOrder
             val builder = MaterialAlertDialogBuilder(this)
             builder.setTitle("Sorting")
-                .setPositiveButton("OK"){ _, _ ->
+                .setPositiveButton("OK") { _, _ ->
                     val editor = getSharedPreferences("SORTING", MODE_PRIVATE).edit()
                     editor.putInt("sortOrder", currentSort)
                     editor.apply()
                 }
-                .setSingleChoiceItems(menuList, currentSort){ _,which->
+                .setSingleChoiceItems(menuList, currentSort) { _, which ->
                     currentSort = which
                 }
             val customDialog = builder.create()
@@ -49,18 +49,18 @@ class SettingsActivity : AppCompatActivity() {
         }
     }
 
-    private fun saveTheme(index: Int){
-        if(MainActivity.themeIndex != index){
+    private fun saveTheme(index: Int) {
+        if (MainActivity.themeIndex != index) {
             val editor = getSharedPreferences("THEMES", MODE_PRIVATE).edit()
             editor.putInt("themeIndex", index)
             editor.apply()
             val builder = MaterialAlertDialogBuilder(this)
             builder.setTitle("Apply Theme")
                 .setMessage("Do you want to apply theme?")
-                .setPositiveButton("Yes"){ _, _ ->
+                .setPositiveButton("Yes") { _, _ ->
                     exitApplication()
                 }
-                .setNegativeButton("No"){dialog, _ ->
+                .setNegativeButton("No") { dialog, _ ->
                     dialog.dismiss()
                 }
             val customDialog = builder.create()
@@ -69,7 +69,8 @@ class SettingsActivity : AppCompatActivity() {
             setDialogBtnBackground(this, customDialog)
         }
     }
-    private fun setVersionDetails():String{
+
+    private fun setVersionDetails(): String {
         return "Version Name: ${BuildConfig.VERSION_NAME}"
     }
 }
