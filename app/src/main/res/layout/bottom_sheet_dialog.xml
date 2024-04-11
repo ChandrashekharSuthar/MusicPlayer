@@ -13,7 +13,7 @@
         android:layout_width="40dp"
         android:layout_height="5dp"
         android:layout_margin="10dp"
-        app:cardElevation="5dp"/>
+        app:cardElevation="5dp" />
 
     <LinearLayout
         android:id="@+id/min_15"
