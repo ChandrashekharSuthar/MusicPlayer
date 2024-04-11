@@ -9,63 +9,63 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
+        android:layout_height="?actionBarSize"
         android:background="?attr/themeColor"
+        android:gravity="center_vertical"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/backBtnFA"
+            style="@style/Widget.Material3.Button.IconButton"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:backgroundTint="@android:color/transparent"
             android:contentDescription="@string/back_btn"
-            android:padding="5dp"
-            android:src="@drawable/back_icon"
-            app:tint="@color/white" />
+            app:icon="@drawable/back_icon"
+            app:iconSize="28dp"
+            app:iconTint="@color/white" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:contentDescription="@string/favourites_btn"
-            android:gravity="center"
             android:text="@string/favourites_btn"
+            android:textAlignment="textStart"
             android:textColor="@color/white"
-            android:textSize="25sp"
-            android:textStyle="bold" />
+            android:textSize="24sp" />
+
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/favouriteRV"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_height="0dp"
         android:paddingBottom="40dp"
         android:scrollbarThumbVertical="@drawable/scroll_bar_icon"
         android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/linearLayout" />
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/shuffleBtnFA"
+        style="@style/Widget.Material3.FloatingActionButton.Surface"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"
         app:icon="@drawable/shuffle_icon"
-        app:iconSize="35dp"
         app:iconTint="?attr/themeColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.9"
-        app:strokeColor="?attr/themeColor"
-        app:strokeWidth="2dp" />
+        app:layout_constraintVertical_bias="0.95" />
 
     <TextView
         android:id="@+id/instructionFV"

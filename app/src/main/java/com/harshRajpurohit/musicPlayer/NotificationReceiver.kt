@@ -73,7 +73,7 @@ class NotificationReceiver : BroadcastReceiver() {
         playMusic()
         PlayerActivity.fIndex =
             favouriteChecker(PlayerActivity.musicListPA[PlayerActivity.songPosition].id)
-        if (PlayerActivity.isFavourite) PlayerActivity.binding.favouriteBtnPA.setImageResource(R.drawable.favourite_icon)
-        else PlayerActivity.binding.favouriteBtnPA.setImageResource(R.drawable.favourite_empty_icon)
+        if (PlayerActivity.isFavourite) PlayerActivity.binding.favouriteBtnPA.setIconResource(R.drawable.favourite_icon)
+        else PlayerActivity.binding.favouriteBtnPA.setIconResource(R.drawable.favourite_empty_icon)
     }
 }

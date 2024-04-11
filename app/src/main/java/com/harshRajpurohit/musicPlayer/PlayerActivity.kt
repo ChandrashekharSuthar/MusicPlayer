@@ -178,11 +178,11 @@ class PlayerActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnCom
             fIndex = favouriteChecker(musicListPA[songPosition].id)
             if (isFavourite) {
                 isFavourite = false
-                binding.favouriteBtnPA.setImageResource(R.drawable.favourite_empty_icon)
+                binding.favouriteBtnPA.setIconResource(R.drawable.favourite_empty_icon)
                 FavouriteActivity.favouriteSongs.removeAt(fIndex)
             } else {
                 isFavourite = true
-                binding.favouriteBtnPA.setImageResource(R.drawable.favourite_icon)
+                binding.favouriteBtnPA.setIconResource(R.drawable.favourite_icon)
                 FavouriteActivity.favouriteSongs.add(musicListPA[songPosition])
             }
             FavouriteActivity.favouritesChanged = true
@@ -264,8 +264,8 @@ class PlayerActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnCom
                 R.color.purple_500
             )
         )
-        if (isFavourite) binding.favouriteBtnPA.setImageResource(R.drawable.favourite_icon)
-        else binding.favouriteBtnPA.setImageResource(R.drawable.favourite_empty_icon)
+        if (isFavourite) binding.favouriteBtnPA.setIconResource(R.drawable.favourite_icon)
+        else binding.favouriteBtnPA.setIconResource(R.drawable.favourite_empty_icon)
 
         val img = getImgArt(musicListPA[songPosition].path)
         val image = if (img != null) {

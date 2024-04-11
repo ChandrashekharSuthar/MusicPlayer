@@ -11,25 +11,24 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?attr/themeColor"
-            app:navigationIconTint="?attr/colorOnThemeColor"
-            app:titleTextColor="?attr/colorOnThemeColor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIconTint="?attr/colorOnThemeColor"
+            app:titleTextColor="?attr/colorOnThemeColor" />
 
         <!--for buttons-->
         <LinearLayout
             android:id="@+id/buttonsLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:background="?attr/themeColor"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/toolbar">
@@ -102,9 +101,9 @@
             android:id="@+id/totalSongs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/total_songs"
             android:paddingHorizontal="15dp"
             android:paddingVertical="5dp"
+            android:text="@string/total_songs"
             android:textColor="?colorOnPrimary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -124,9 +123,8 @@
                 android:id="@+id/musicRV"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingBottom="80dp"
                 android:clipToPadding="false"
-                android:scrollbarThumbVertical="@drawable/scroll_bar_icon"
+                android:paddingBottom="80dp"
                 android:scrollbars="vertical" />
 
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
@@ -138,7 +136,7 @@
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             android:clipToPadding="false"
-            android:padding="10dp"
+            android:padding="7dp"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
