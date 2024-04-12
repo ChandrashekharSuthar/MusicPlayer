@@ -4,4 +4,8 @@
     <style name="curved">
         <item name="cornerSize">15%</item>
     </style>
+
+    <style name="circular">
+        <item name="cornerSize">50%</item>
+    </style>
 </resources>

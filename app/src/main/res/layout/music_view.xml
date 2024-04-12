@@ -14,16 +14,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/imageMV"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:src="@mipmap/music_player_icon"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:shapeAppearanceOverlay="@style/curved" />
+            app:shapeAppearanceOverlay="@style/circular" />
 
         <TextView
             android:id="@+id/songNameMV"
@@ -34,6 +33,7 @@
             android:paddingHorizontal="10dp"
             android:paddingVertical="5dp"
             android:singleLine="true"
+            android:textSize="16sp"
             android:text="@string/song_name"
             android:textColor="?colorOnPrimary"
             app:layout_constraintEnd_toStartOf="@id/songDuration"
@@ -49,6 +49,7 @@
             android:paddingHorizontal="10dp"
             android:singleLine="true"
             android:text="@string/song_name"
+            android:textSize="13sp"
             app:layout_constraintEnd_toStartOf="@id/songDuration"
             app:layout_constraintStart_toEndOf="@id/imageMV"
             app:layout_constraintTop_toBottomOf="@id/songNameMV" />
