@@ -1,10 +1,16 @@
-package com.harshRajpurohit.musicPlayer
+package com.harshRajpurohit.musicPlayer.components
 
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.harshRajpurohit.musicPlayer.R
+import com.harshRajpurohit.musicPlayer.activities.PlayerActivity
+import com.harshRajpurohit.musicPlayer.models.exitApplication
+import com.harshRajpurohit.musicPlayer.models.favouriteChecker
+import com.harshRajpurohit.musicPlayer.fragments.NowPlaying
+import com.harshRajpurohit.musicPlayer.models.setSongPosition
 
 class NotificationReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {

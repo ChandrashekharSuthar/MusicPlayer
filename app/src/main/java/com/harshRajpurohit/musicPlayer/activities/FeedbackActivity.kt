@@ -1,4 +1,4 @@
-package com.harshRajpurohit.musicPlayer
+package com.harshRajpurohit.musicPlayer.activities
 
 //Not Used Now
 

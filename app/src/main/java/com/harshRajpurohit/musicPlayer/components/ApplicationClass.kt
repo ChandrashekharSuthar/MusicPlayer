@@ -1,4 +1,4 @@
-package com.harshRajpurohit.musicPlayer
+package com.harshRajpurohit.musicPlayer.components
 
 import android.app.Application
 import android.app.NotificationChannel

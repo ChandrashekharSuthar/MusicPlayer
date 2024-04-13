@@ -9,7 +9,7 @@
     android:orientation="horizontal"
     android:paddingHorizontal="5dp"
     android:paddingVertical="2dp"
-    tools:context=".NowPlaying">
+    tools:context=".fragments.NowPlaying">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/songImgNP"

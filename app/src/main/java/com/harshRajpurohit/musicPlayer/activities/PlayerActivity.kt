@@ -1,4 +1,4 @@
-package com.harshRajpurohit.musicPlayer
+package com.harshRajpurohit.musicPlayer.activities
 
 import android.annotation.SuppressLint
 import android.content.ComponentName
@@ -28,8 +28,19 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.harshRajpurohit.musicPlayer.models.Music
+import com.harshRajpurohit.musicPlayer.components.MusicService
+import com.harshRajpurohit.musicPlayer.R
 import com.harshRajpurohit.musicPlayer.databinding.ActivityPlayerBinding
 import com.harshRajpurohit.musicPlayer.databinding.AudioBoosterBinding
+import com.harshRajpurohit.musicPlayer.models.exitApplication
+import com.harshRajpurohit.musicPlayer.models.favouriteChecker
+import com.harshRajpurohit.musicPlayer.models.formatDuration
+import com.harshRajpurohit.musicPlayer.fragments.NowPlaying
+import com.harshRajpurohit.musicPlayer.models.getImgArt
+import com.harshRajpurohit.musicPlayer.models.getMainColor
+import com.harshRajpurohit.musicPlayer.models.setDialogBtnBackground
+import com.harshRajpurohit.musicPlayer.models.setSongPosition
 
 class PlayerActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnCompletionListener {
 
@@ -279,7 +290,7 @@ class PlayerActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnCom
         val bgColor = getMainColor(image)
         val gradient =
             GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, intArrayOf(0xFFFFFF, bgColor))
-        binding.root.background = gradient
+        binding.topRoot.background = gradient
         window?.statusBarColor = bgColor
     }
 

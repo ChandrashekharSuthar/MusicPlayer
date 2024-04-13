@@ -1,10 +1,12 @@
-package com.harshRajpurohit.musicPlayer
+package com.harshRajpurohit.musicPlayer.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.harshRajpurohit.musicPlayer.R
+import com.harshRajpurohit.musicPlayer.adapters.MusicAdapter
 import com.harshRajpurohit.musicPlayer.databinding.ActivitySelectionBinding
 
 class SelectionActivity : AppCompatActivity() {

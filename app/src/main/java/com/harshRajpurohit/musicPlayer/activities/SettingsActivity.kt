@@ -1,10 +1,13 @@
-package com.harshRajpurohit.musicPlayer
+package com.harshRajpurohit.musicPlayer.activities
 
 import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.harshRajpurohit.musicPlayer.BuildConfig
 import com.harshRajpurohit.musicPlayer.databinding.ActivitySettingsBinding
+import com.harshRajpurohit.musicPlayer.models.exitApplication
+import com.harshRajpurohit.musicPlayer.models.setDialogBtnBackground
 
 class SettingsActivity : AppCompatActivity() {
 

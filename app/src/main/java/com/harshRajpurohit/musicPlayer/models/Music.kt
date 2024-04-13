@@ -1,4 +1,4 @@
-package com.harshRajpurohit.musicPlayer
+package com.harshRajpurohit.musicPlayer.models
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -6,6 +6,9 @@ import android.graphics.Color
 import android.media.MediaMetadataRetriever
 import androidx.appcompat.app.AlertDialog
 import com.google.android.material.color.MaterialColors
+import com.harshRajpurohit.musicPlayer.R
+import com.harshRajpurohit.musicPlayer.activities.FavouriteActivity
+import com.harshRajpurohit.musicPlayer.activities.PlayerActivity
 import java.io.File
 import java.util.concurrent.TimeUnit
 import kotlin.system.exitProcess

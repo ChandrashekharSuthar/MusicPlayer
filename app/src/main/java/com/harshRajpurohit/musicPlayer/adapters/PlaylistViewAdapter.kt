@@ -1,4 +1,4 @@
-package com.harshRajpurohit.musicPlayer
+package com.harshRajpurohit.musicPlayer.adapters
 
 import android.content.Context
 import android.content.Intent
@@ -9,7 +9,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.harshRajpurohit.musicPlayer.models.Playlist
+import com.harshRajpurohit.musicPlayer.R
+import com.harshRajpurohit.musicPlayer.activities.MainActivity
+import com.harshRajpurohit.musicPlayer.activities.PlaylistActivity
+import com.harshRajpurohit.musicPlayer.activities.PlaylistDetails
 import com.harshRajpurohit.musicPlayer.databinding.PlaylistViewBinding
+import com.harshRajpurohit.musicPlayer.models.setDialogBtnBackground
 
 class PlaylistViewAdapter(
     private val context: Context,

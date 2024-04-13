@@ -1,4 +1,4 @@
-package com.harshRajpurohit.musicPlayer
+package com.harshRajpurohit.musicPlayer.components
 
 import android.annotation.SuppressLint
 import android.app.PendingIntent
@@ -16,6 +16,12 @@ import android.os.Looper
 import android.support.v4.media.MediaMetadataCompat
 import android.support.v4.media.session.MediaSessionCompat
 import android.support.v4.media.session.PlaybackStateCompat
+import com.harshRajpurohit.musicPlayer.R
+import com.harshRajpurohit.musicPlayer.activities.MainActivity
+import com.harshRajpurohit.musicPlayer.activities.PlayerActivity
+import com.harshRajpurohit.musicPlayer.models.formatDuration
+import com.harshRajpurohit.musicPlayer.fragments.NowPlaying
+import com.harshRajpurohit.musicPlayer.models.getImgArt
 
 class MusicService : Service(), AudioManager.OnAudioFocusChangeListener {
     private var myBinder = MyBinder()

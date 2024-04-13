@@ -1,9 +1,11 @@
-package com.harshRajpurohit.musicPlayer
+package com.harshRajpurohit.musicPlayer.activities
 
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
+import com.harshRajpurohit.musicPlayer.models.Music
+import com.harshRajpurohit.musicPlayer.adapters.FavouriteAdapter
 import com.harshRajpurohit.musicPlayer.databinding.ActivityPlayNextBinding
 
 class PlayNext : AppCompatActivity() {
