@@ -7,8 +7,7 @@
     android:background="@drawable/mini_player_background"
     android:gravity="center_vertical"
     android:orientation="horizontal"
-    android:paddingHorizontal="5dp"
-    android:paddingVertical="2dp"
+    android:padding="10dp"
     tools:context=".fragments.NowPlaying">
 
     <com.google.android.material.imageview.ShapeableImageView
@@ -25,7 +24,7 @@
         android:layout_weight="1"
         android:ellipsize="marquee"
         android:marqueeRepeatLimit="marquee_forever"
-        android:padding="5dp"
+        android:paddingHorizontal="10dp"
         android:singleLine="true"
         android:text="@string/song_name"
         android:textColor="@color/white"
@@ -33,7 +32,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/playPauseBtnNP"
-        style="@style/Widget.Material3.Button.IconButton.Filled"
+        style="@style/Widget.Material3.Button.IconButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:icon="@drawable/play_icon"
@@ -42,7 +41,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/nextBtnNP"
-        style="@style/Widget.Material3.Button.IconButton.Filled"
+        style="@style/Widget.Material3.Button.IconButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:icon="@drawable/baseline_skip_next_24"

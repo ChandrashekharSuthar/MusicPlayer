@@ -136,7 +136,6 @@
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             android:clipToPadding="false"
-            android:padding="7dp"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
