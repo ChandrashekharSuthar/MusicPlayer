@@ -19,8 +19,8 @@ import android.support.v4.media.session.PlaybackStateCompat
 import com.harshRajpurohit.musicPlayer.R
 import com.harshRajpurohit.musicPlayer.activities.MainActivity
 import com.harshRajpurohit.musicPlayer.activities.PlayerActivity
-import com.harshRajpurohit.musicPlayer.models.formatDuration
 import com.harshRajpurohit.musicPlayer.fragments.NowPlaying
+import com.harshRajpurohit.musicPlayer.models.formatDuration
 import com.harshRajpurohit.musicPlayer.models.getImgArt
 
 class MusicService : Service(), AudioManager.OnAudioFocusChangeListener {

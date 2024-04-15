@@ -7,9 +7,9 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.harshRajpurohit.musicPlayer.R
 import com.harshRajpurohit.musicPlayer.activities.PlayerActivity
+import com.harshRajpurohit.musicPlayer.fragments.NowPlaying
 import com.harshRajpurohit.musicPlayer.models.exitApplication
 import com.harshRajpurohit.musicPlayer.models.favouriteChecker
-import com.harshRajpurohit.musicPlayer.fragments.NowPlaying
 import com.harshRajpurohit.musicPlayer.models.setSongPosition
 
 class NotificationReceiver : BroadcastReceiver() {

@@ -13,12 +13,12 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
-import com.harshRajpurohit.musicPlayer.models.Music
+import com.harshRajpurohit.musicPlayer.R
 import com.harshRajpurohit.musicPlayer.activities.PlayNext
 import com.harshRajpurohit.musicPlayer.activities.PlayerActivity
-import com.harshRajpurohit.musicPlayer.R
 import com.harshRajpurohit.musicPlayer.databinding.FavouriteViewBinding
 import com.harshRajpurohit.musicPlayer.databinding.MoreFeaturesBinding
+import com.harshRajpurohit.musicPlayer.models.Music
 
 class FavouriteAdapter(
     private val context: Context,

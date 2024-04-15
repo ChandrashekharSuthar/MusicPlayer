@@ -10,9 +10,9 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.harshRajpurohit.musicPlayer.activities.PlayerActivity
 import com.harshRajpurohit.musicPlayer.R
 import com.harshRajpurohit.musicPlayer.activities.MainActivity
+import com.harshRajpurohit.musicPlayer.activities.PlayerActivity
 import com.harshRajpurohit.musicPlayer.databinding.FragmentNowPlayingBinding
 import com.harshRajpurohit.musicPlayer.models.setSongPosition
 

@@ -7,9 +7,9 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.harshRajpurohit.musicPlayer.adapters.FavouriteAdapter
+import com.harshRajpurohit.musicPlayer.databinding.ActivityFavouriteBinding
 import com.harshRajpurohit.musicPlayer.models.Music
 import com.harshRajpurohit.musicPlayer.models.checkPlaylist
-import com.harshRajpurohit.musicPlayer.databinding.ActivityFavouriteBinding
 
 class FavouriteActivity : AppCompatActivity() {
 
