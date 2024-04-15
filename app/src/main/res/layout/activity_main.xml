@@ -74,7 +74,7 @@
                 android:text="@string/playlist_btn"
                 android:textAllCaps="false"
                 android:textColor="?attr/colorOnThemeColor"
-                app:icon="@drawable/playlist_icon"
+                app:icon="@drawable/baseline_playlist_play_24"
                 app:iconGravity="top"
                 app:iconTint="?attr/colorOnThemeColor" />
 
@@ -90,7 +90,7 @@
                 android:text="@string/play_next"
                 android:textAllCaps="false"
                 android:textColor="?attr/colorOnThemeColor"
-                app:icon="@drawable/play_next_icon"
+                app:icon="@drawable/baseline_queue_music_24"
                 app:iconGravity="top"
                 app:iconTint="?attr/colorOnThemeColor" />
 
@@ -142,16 +142,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:layout="@layout/fragment_now_playing" />
-
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:menu="@menu/bottom_navigation_menu"
-            app:itemIconSize="26dp"
-            app:labelVisibilityMode="labeled"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
