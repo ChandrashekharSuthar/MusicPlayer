@@ -2,47 +2,63 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/Widget.Material3.CardView.Outlined"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
     app:cardBackgroundColor="@color/white"
     app:cardCornerRadius="15dp"
     app:cardElevation="4dp"
-    app:strokeColor="?attr/themeColor"
+    app:contentPadding="10dp"
     app:strokeWidth="1dp">
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/playlistImg"
-        android:layout_width="170dp"
-        android:layout_height="130dp"
-        android:contentDescription="@string/song_img"
-        android:src="@drawable/music_player_icon_slash_screen"
-        app:shapeAppearanceOverlay="@style/curved" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/playlistName"
-        android:layout_width="130dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="130dp"
-        android:contentDescription="@string/playlist_name"
-        android:ellipsize="marquee"
-        android:gravity="center"
-        android:marqueeRepeatLimit="marquee_forever"
-        android:singleLine="true"
-        android:text="@string/playlist_name"
-        android:textColor="@color/black"
-        android:textSize="18sp" />
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/playlistImg"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:contentDescription="@string/song_img"
+            android:src="@drawable/music_player_icon_slash_screen"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/curved" />
 
-    <ImageButton
-        android:id="@+id/playlistDeleteBtn"
-        android:layout_width="35dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="130dp"
-        android:layout_marginTop="130dp"
-        android:layout_marginEnd="5dp"
-        android:backgroundTint="@android:color/transparent"
-        android:contentDescription="@string/playlist_delete"
-        android:src="@drawable/delete_icon"
-        app:tint="?attr/themeColor" />
+        <TextView
+            android:id="@+id/playlistName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/playlist_name"
+            android:ellipsize="marquee"
+            android:gravity="center"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true"
+            android:text="@string/playlist_name"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@id/playlistDeleteBtn"
+            app:layout_constraintEnd_toStartOf="@id/playlistDeleteBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/playlistDeleteBtn" />
+
+        <ImageButton
+            android:id="@+id/playlistDeleteBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/transparent"
+            android:contentDescription="@string/playlist_delete"
+            android:src="@drawable/delete_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/playlistName"
+            app:layout_constraintTop_toBottomOf="@id/playlistImg"
+            app:tint="?attr/themeColor" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </com.google.android.material.card.MaterialCardView>
