@@ -124,20 +124,28 @@ class MusicAdapter(
 
             selectionActivity -> {
                 holder.root.setOnClickListener {
-                    if (addSong(musicList[position]))
-                        holder.root.setBackgroundColor(
-                            ContextCompat.getColor(
-                                context,
-                                R.color.cool_pink
-                            )
-                        )
-                    else
-                        holder.root.setBackgroundColor(
-                            ContextCompat.getColor(
-                                context,
-                                R.color.white
-                            )
-                        )
+                    if (addSong(musicList[position])) {
+//                        holder.root.setBackgroundColor(
+////                            ContextCompat.getColor(
+////                                context,
+////                                R.color.cool_pink
+////                            )
+////                        )
+                        holder.root.strokeWidth = 4
+                        holder.root.isChecked = true
+                    }
+//
+                    else {
+//                        holder.root.setBackgroundColor(
+////                            ContextCompat.getColor(
+////                                context,
+////                                R.color.white
+////                            )
+////                        )
+                        holder.root.strokeWidth = 0
+                        holder.root.isChecked = false
+                    }
+//
 
                 }
             }
