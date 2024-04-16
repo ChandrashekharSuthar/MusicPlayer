@@ -191,6 +191,23 @@ class MusicService : Service(), AudioManager.OnAudioFocusChangeListener {
         Handler(Looper.getMainLooper()).postDelayed(runnable, 0)
     }
 
+    fun seekBarMiniPlayerSetup() {
+        // Check if NowPlaying binding and seekBarPA are not null
+        if (NowPlaying.binding != null && NowPlaying.binding.seekBarPA != null) {
+            runnable = Runnable {
+                // Check if mediaPlayer is not null before accessing its properties
+                mediaPlayer?.let {
+                    NowPlaying.binding.seekBarPA.progress = it.currentPosition
+                }
+                // Schedule the next execution of the runnable
+                Handler(Looper.getMainLooper()).postDelayed(runnable, 200)
+            }
+            // Start the initial execution of the runnable
+            Handler(Looper.getMainLooper()).postDelayed(runnable, 0)
+        }
+    }
+
+
     override fun onAudioFocusChange(focusChange: Int) {
         if (focusChange <= 0) {
             //pause music

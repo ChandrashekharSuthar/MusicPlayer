@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SeekBar
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
@@ -14,6 +15,7 @@ import com.harshRajpurohit.musicPlayer.R
 import com.harshRajpurohit.musicPlayer.activities.MainActivity
 import com.harshRajpurohit.musicPlayer.activities.PlayerActivity
 import com.harshRajpurohit.musicPlayer.databinding.FragmentNowPlayingBinding
+import com.harshRajpurohit.musicPlayer.models.formatDuration
 import com.harshRajpurohit.musicPlayer.models.setSongPosition
 
 class NowPlaying : Fragment() {
@@ -45,7 +47,16 @@ class NowPlaying : Fragment() {
                         .centerCrop()
                 )
                 .into(binding.songImgNP)
+            binding.tvSeekBarStart.text =
+                formatDuration(PlayerActivity.musicService!!.mediaPlayer!!.currentPosition.toLong())
+            binding.tvSeekBarEnd.text =
+                formatDuration(PlayerActivity.musicService!!.mediaPlayer!!.duration.toLong())
             binding.songNameNP.text = PlayerActivity.musicListPA[PlayerActivity.songPosition].title
+            binding.songAlbumNP.text = PlayerActivity.musicListPA[PlayerActivity.songPosition].album
+            binding.seekBarPA.progress =
+                PlayerActivity.musicService!!.mediaPlayer!!.currentPosition
+            binding.seekBarPA.max =
+                PlayerActivity.musicService!!.mediaPlayer!!.duration
             PlayerActivity.musicService!!.showNotification(R.drawable.pause_icon)
             playMusic()
         }
@@ -55,6 +66,19 @@ class NowPlaying : Fragment() {
             intent.putExtra("class", "NowPlaying")
             ContextCompat.startActivity(requireContext(), intent, null)
         }
+
+        binding.seekBarPA.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                if (fromUser) {
+                    PlayerActivity.musicService!!.mediaPlayer!!.seekTo(progress)
+                    PlayerActivity.musicService!!.showNotification(if (PlayerActivity.isPlaying) R.drawable.pause_icon else R.drawable.play_icon)
+                }
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) = Unit
+            override fun onStopTrackingTouch(seekBar: SeekBar?) = Unit
+        })
+
         return view
     }
 
@@ -70,9 +94,19 @@ class NowPlaying : Fragment() {
                         .centerCrop()
                 )
                 .into(binding.songImgNP)
+            binding.tvSeekBarStart.text =
+                formatDuration(PlayerActivity.musicService!!.mediaPlayer!!.currentPosition.toLong())
+            binding.tvSeekBarEnd.text =
+                formatDuration(PlayerActivity.musicService!!.mediaPlayer!!.duration.toLong())
             binding.songNameNP.text = PlayerActivity.musicListPA[PlayerActivity.songPosition].title
+            binding.songAlbumNP.text = PlayerActivity.musicListPA[PlayerActivity.songPosition].album
+            binding.seekBarPA.progress =
+                PlayerActivity.musicService!!.mediaPlayer!!.currentPosition
+            binding.seekBarPA.max =
+                PlayerActivity.musicService!!.mediaPlayer!!.duration
             if (PlayerActivity.isPlaying) binding.playPauseBtnNP.setIconResource(R.drawable.pause_icon)
             else binding.playPauseBtnNP.setIconResource(R.drawable.play_icon)
+            PlayerActivity.musicService!!.seekBarMiniPlayerSetup()
         }
     }
 

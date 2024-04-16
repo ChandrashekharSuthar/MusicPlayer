@@ -1,34 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/mini_player_background"
-    android:gravity="center_vertical"
-    android:orientation="horizontal"
-    android:padding="10dp"
+    android:padding="7dp"
     tools:context=".fragments.NowPlaying">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/songImgNP"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
         android:src="@drawable/music_player_icon_slash_screen"
+        app:layout_constraintBottom_toTopOf="@id/seekBarPA"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:shapeAppearanceOverlay="@style/curved" />
 
     <TextView
         android:id="@+id/songNameNP"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:ellipsize="marquee"
         android:marqueeRepeatLimit="marquee_forever"
         android:paddingHorizontal="10dp"
         android:singleLine="true"
         android:text="@string/song_name"
         android:textColor="@color/white"
-        android:textSize="18sp" />
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/songAlbumNP"
+        app:layout_constraintEnd_toStartOf="@id/playPauseBtnNP"
+        app:layout_constraintStart_toEndOf="@id/songImgNP"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/songAlbumNP"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="10dp"
+        android:singleLine="true"
+        android:text="@string/song_name"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@id/seekBarPA"
+        app:layout_constraintEnd_toStartOf="@id/playPauseBtnNP"
+        app:layout_constraintStart_toEndOf="@id/songImgNP"
+        app:layout_constraintTop_toBottomOf="@id/songNameNP" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/playPauseBtnNP"
@@ -36,8 +54,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:icon="@drawable/play_icon"
-        app:iconSize="28dp"
-        app:iconTint="@color/white" />
+        app:iconSize="32dp"
+        app:iconTint="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/seekBarPA"
+        app:layout_constraintEnd_toStartOf="@id/nextBtnNP"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/nextBtnNP"
@@ -45,8 +66,47 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:icon="@drawable/baseline_skip_next_24"
-        app:iconSize="28dp"
-        app:iconTint="@color/white" />
+        app:iconSize="32dp"
+        app:iconTint="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/seekBarPA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvSeekBarStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/start_tv"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="@id/seekBarPA"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/seekBarPA" />
+
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/seekBarPA"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingVertical="5dp"
+        android:progressTint="@color/white"
+        android:thumbTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tvSeekBarEnd"
+        app:layout_constraintStart_toEndOf="@id/tvSeekBarStart"
+        app:layout_constraintTop_toBottomOf="@id/playPauseBtnNP" />
+
+    <TextView
+        android:id="@+id/tvSeekBarEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/end_tv"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="@id/seekBarPA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/seekBarPA" />
 
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

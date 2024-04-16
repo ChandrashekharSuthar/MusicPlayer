@@ -68,7 +68,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/headerLayout"
-        app:strokeColor="?colorPrimary">
+        app:strokeColor="@android:color/holo_red_dark">
 
         <!--    Current Song Image-->
         <com.google.android.material.imageview.ShapeableImageView
@@ -146,8 +146,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingVertical="2dp"
-            android:progressTint="?colorPrimary"
-            android:thumbTint="?colorPrimary" />
+            android:progressTint="@android:color/holo_red_light"
+            android:thumbTint="@android:color/holo_red_light" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -199,6 +199,7 @@
             style="@style/Widget.Material3.Button.IconButton.Filled"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_red_light"
             app:elevation="16dp"
             app:icon="@drawable/baseline_skip_previous_24"
             app:iconSize="36dp"
@@ -212,6 +213,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="15dp"
             android:backgroundTint="@android:color/holo_red_light"
+            app:cornerRadius="30dp"
             app:elevation="16dp"
             app:icon="@drawable/pause_icon"
             app:iconSize="60dp"
@@ -223,6 +225,7 @@
             style="@style/Widget.Material3.Button.IconButton.Filled"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_red_light"
             app:elevation="16dp"
             app:icon="@drawable/baseline_skip_next_24"
             app:iconSize="36dp"
