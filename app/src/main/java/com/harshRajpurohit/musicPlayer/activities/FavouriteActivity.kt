@@ -30,7 +30,7 @@ class FavouriteActivity : AppCompatActivity() {
         binding.backBtnFA.setOnClickListener { finish() }
         binding.favouriteRV.setHasFixedSize(true)
         binding.favouriteRV.setItemViewCacheSize(13)
-        binding.favouriteRV.layoutManager = GridLayoutManager(this, 4)
+        binding.favouriteRV.layoutManager = GridLayoutManager(this, 3)
         adapter = FavouriteAdapter(this, favouriteSongs)
         binding.favouriteRV.adapter = adapter
 

@@ -62,14 +62,14 @@
         android:layout_marginHorizontal="5dp"
         app:cardCornerRadius="25dp"
         app:cardElevation="4dp"
-        app:strokeWidth="0dp"
         app:cardUseCompatPadding="true"
         app:layout_constraintBottom_toTopOf="@id/trackTitleLayout"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/headerLayout"
-        app:strokeColor="@android:color/holo_red_dark">
+        app:strokeColor="@android:color/holo_red_dark"
+        app:strokeWidth="0dp">
 
         <!--    Current Song Image-->
         <com.google.android.material.imageview.ShapeableImageView
