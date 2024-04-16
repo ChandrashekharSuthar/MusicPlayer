@@ -13,7 +13,8 @@ class AboutActivity : AppCompatActivity() {
         setTheme(MainActivity.currentThemeNav[MainActivity.themeIndex])
         binding = ActivityAboutBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        supportActionBar?.title = "About"
+        setSupportActionBar(binding.aboutToolbar)
+        binding.aboutToolbar.setNavigationOnClickListener { finish() }
         binding.aboutText.text = aboutText()
     }
 
