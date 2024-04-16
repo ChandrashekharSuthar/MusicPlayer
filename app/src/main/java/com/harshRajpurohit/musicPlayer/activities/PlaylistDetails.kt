@@ -78,9 +78,17 @@ class PlaylistDetails : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         binding.playlistNamePD.text = PlaylistActivity.musicPlaylist.ref[currentPlaylistPos].name
-        binding.moreInfoPD.text = "Total ${adapter.itemCount} Songs.\n\n" +
-                "Created On:\n${PlaylistActivity.musicPlaylist.ref[currentPlaylistPos].createdOn}\n\n" +
-                "  -- ${PlaylistActivity.musicPlaylist.ref[currentPlaylistPos].createdBy}"
+
+        binding.moreInfoPDTotalSongs.text = "Total ${adapter.itemCount} Songs"
+        binding.moreInfoPDTitle.text =
+            PlaylistActivity.musicPlaylist.ref[currentPlaylistPos].createdBy
+        binding.moreInfoPDCreateDate.text =
+            "Created ${PlaylistActivity.musicPlaylist.ref[currentPlaylistPos].createdOn}"
+
+//        binding.moreInfoPD.text = "Total ${adapter.itemCount} Songs.\n\n" +
+//                "Created On:\n${PlaylistActivity.musicPlaylist.ref[currentPlaylistPos].createdOn}\n\n" +
+//                "  -- ${PlaylistActivity.musicPlaylist.ref[currentPlaylistPos].createdBy}"
+
         if (adapter.itemCount > 0) {
             Glide.with(this)
                 .load(PlaylistActivity.musicPlaylist.ref[currentPlaylistPos].playlist[0].artUri)
