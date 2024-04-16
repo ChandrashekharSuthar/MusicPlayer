@@ -18,7 +18,8 @@ class SettingsActivity : AppCompatActivity() {
         setTheme(MainActivity.currentThemeNav[MainActivity.themeIndex])
         binding = ActivitySettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        supportActionBar?.title = "Settings"
+        setSupportActionBar(binding.settingsToolbar)
+        binding.settingsToolbar.setNavigationOnClickListener { finish() }
         when (MainActivity.themeIndex) {
             0 -> binding.coolPinkTheme.setBackgroundColor(Color.YELLOW)
             1 -> binding.coolBlueTheme.setBackgroundColor(Color.YELLOW)

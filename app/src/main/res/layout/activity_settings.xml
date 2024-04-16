@@ -1,105 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
     android:orientation="vertical"
     tools:context=".activities.SettingsActivity">
 
-    <TextView
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/settingsToolbar"
         android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
-        android:background="@color/white"
-        android:gravity="center"
-        android:text="@string/set_theme"
-        android:textColor="@color/black"
-        android:textSize="24sp" />
+        android:layout_height="wrap_content"
+        android:background="?attr/themeColor"
+        app:navigationIcon="@drawable/back_icon"
+        app:navigationIconTint="?attr/colorOnThemeColor"
+        app:title="Settings"
+        app:titleTextColor="?attr/colorOnThemeColor" />
 
-    <LinearLayout
+    <com.google.android.material.card.MaterialCardView
+        style="@style/Widget.Material3.CardView.Outlined"
         android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
-        android:background="@color/white"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:paddingVertical="5dp">
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="3dp"
+        app:cardUseCompatPadding="true"
+        app:contentPadding="3dp">
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/coolPinkTheme"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@drawable/circle_icon"
-            android:tint="@color/cool_pink" />
-
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/coolBlueTheme"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@drawable/circle_icon"
-            android:tint="@color/cool_blue" />
-
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/coolPurpleTheme"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@drawable/circle_icon"
-            android:tint="@color/purple_500" />
-
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/coolGreenTheme"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@drawable/circle_icon"
-            android:tint="@color/cool_green" />
-
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/coolBlackTheme"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@drawable/circle_icon"
-            android:tint="@color/black" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
-        android:background="@color/white"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:paddingHorizontal="17dp">
-
-        <TextView
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@color/white"
-            android:padding="5dp"
-            android:text="@string/sort_by"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:orientation="vertical">
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/sortBtn"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/sort_icon"
-            android:tint="@color/cool_pink" />
-    </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingVertical="10dp"
+                android:text="@string/set_theme"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/versionName"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white"
-        android:padding="17dp"
-        android:text="@string/version_name"
-        android:textColor="@color/black"
-        android:textSize="18sp" />
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingVertical="5dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/coolPinkTheme"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/circle_icon"
+                    android:tint="@color/cool_pink" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/coolBlueTheme"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/circle_icon"
+                    android:tint="@color/cool_blue" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/coolPurpleTheme"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/circle_icon"
+                    android:tint="@color/purple_500" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/coolGreenTheme"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/circle_icon"
+                    android:tint="@color/cool_green" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/coolBlackTheme"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/circle_icon"
+                    android:tint="@color/black" />
+
+            </LinearLayout>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="17dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:padding="5dp"
+                    android:text="@string/sort_by"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/sortBtn"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/sort_icon"
+                    android:tint="@color/cool_pink" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/versionName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:padding="17dp"
+                android:text="@string/version_name"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
 
 </LinearLayout>
